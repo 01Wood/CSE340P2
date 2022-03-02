@@ -7,15 +7,13 @@
 #include "lexer.h"
 using namespace std;
 
-vector<int> mem;
-int mem_counter;
-map<string, int> location;
-int next_available = 0;
-vector<int> inputs;
-int next_input = 0;
-
-
 class Parser {
+
+	vector<int> mem;
+	int mem_counter;
+	string LHS;
+	vector<string> RHS;
+
 public:
 	Parser();
 	LexicalAnalyzer lexer;

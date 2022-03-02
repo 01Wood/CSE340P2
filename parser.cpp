@@ -74,7 +74,8 @@ void Parser::parse_rule() {
     t1 = lexer.peek(1);
     t2 = lexer.peek(2);
 	if ((t1.token_type == ID) && (t2.token_type == ARROW)) {
-		expect(ID);
+		t1 = expect(ID);
+        LHS = t1.lexeme;
 		expect(ARROW);
 		t1 = lexer.peek(1);
 		if (t1.token_type == ID) {
@@ -128,6 +129,7 @@ void Parser::parse_idList() {
 	t = lexer.peek(1);
 	if (t.token_type == ID) {
 		t = expect(ID);
+        RHS.push_back(t.lexeme);
 		t = lexer.peek(1);
 		if (t.token_type == ID) {
 			parse_idList();
