@@ -4,15 +4,20 @@
  * Do not share this file with anyone
  */
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <cstdio>
 #include <cstdlib>
 #include "lexer.h"
+#include "inputbuf.h"
+#include "parser.h"
 
 using namespace std;
 
 // read grammar
-void ReadGrammar()
-{
+void ReadGrammar() {  
+    Parser parser;
+    parser.parse_grammar();
     cout << "0\n";
 }
 
@@ -63,6 +68,7 @@ int main(int argc, char* argv[])
 
     task = atoi(argv[1]);
 
+
     ReadGrammar();  // Reads the input grammar from standard input
                     // and represent it internally in data structures
                     // ad described in project 2 presentation file
@@ -87,6 +93,8 @@ int main(int argc, char* argv[])
         cout << "Error: unrecognized task number " << task << "\n";
         break;
     }
+
+    system("pause");
     return 0;
 }
 

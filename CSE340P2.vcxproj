@@ -142,10 +142,12 @@
     <ClCompile Include="CSE340P2.cpp" />
     <ClCompile Include="inputbuf.cc" />
     <ClCompile Include="lexer.cc" />
+    <ClCompile Include="parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inputbuf.h" />
     <ClInclude Include="lexer.h" />
+    <ClInclude Include="parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
